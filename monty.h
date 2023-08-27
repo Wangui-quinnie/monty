@@ -42,7 +42,11 @@ typedef struct instruction_s
 } instruction_t;
 
 /* Function prototypes */
-void push(stack_t **stack, unsigned int line_number);
+void push_stack(stack_t **stack, int value);
+int is_valid_integer(const char *str);
+void handle_unknown_opcode(char *opcode, unsigned int line_number);
+void execute_opcode(char *line, unsigned int line_number, stack_t **stack);
+void push(stack_t **stack, char *argument, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
